@@ -35,21 +35,21 @@ app.post('/auth', function(request, response) {
 				request.session.username = username;
 				response.redirect('/home');
 			} else {
-				response.send('Incorrect Username and/or Password!');
+				response.send('Incorrecto');
 			}			
 			response.end();
 		});
 	} else {
-		response.send('Please enter Username and Password!');
+		response.send('Ingrese sus credenciales');
 		response.end();
 	}
 });
 
 app.get('/home', function(request, response) {
 	if (request.session.loggedin) {
-		response.send('Welcome back, ' + request.session.username + '!');
+		response.send('Bienvenido, ' + request.session.username + '!');
 	} else {
-		response.send('Please login to view this page!');
+		response.send('Necesitas loguearte');
 	}
 	response.end();
 });
