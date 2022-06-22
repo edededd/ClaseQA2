@@ -33,8 +33,10 @@ app.post('/auth', function(request, response) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
+				//sucessFlash("Welcome" + username);
 				response.redirect('/home');
 			} else {
+				//failureFlash("Incorrecto")
 				response.send('Incorrecto');
 			}			
 			response.end();

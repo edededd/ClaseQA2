@@ -4,10 +4,8 @@ const {Builder, By, until} = require('selenium-webdriver');
 const {NoSuchElementError} = require('selenium-webdriver/lib/error');
 
 describe('WonderProxy website', function () {
-  // Browser based tests tend to exceed the default timeout
-  // Set a longer timeout here which will be applied to all the tests:
   this.timeout(10000);
-
+  //test del titulo de la página
   describe('Home Page', function () {
     describe('Title', function () {
       it('should be "Localization testing with confidence - WonderProxy"', async function () {
@@ -21,6 +19,14 @@ describe('WonderProxy website', function () {
     });
   });
 });
+
+
+
+
+
+
+
+
 
 async function runWithDriver(test) {
   let driver = await new Builder().forBrowser('chrome').build();
