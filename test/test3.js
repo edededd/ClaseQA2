@@ -16,11 +16,9 @@ const {NoSuchElementError} = require('selenium-webdriver/lib/error');
           const username = await driver.findElement(By.id("user"));
           await username.sendKeys("utec2");
           const password =  await driver.findElement(By.id("pass"));
-          console.log(password.getText())
           const loginButton = driver.findElement(By.id("sub"));
           await password.sendKeys("utec1");
           await loginButton.submit();
-          console.log(username.getText())
           const driver1 = await driver.getWindowHandle();
           await driver.manage().setTimeouts( { implicit: 30000 } );
           /*await driver.navigate().to("http://localhost:3000/home")*/
